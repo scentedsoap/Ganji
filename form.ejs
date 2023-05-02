@@ -1,0 +1,23 @@
+<!Doctype html>
+<html lang = "en">
+
+    <head>
+        <title>Form</title>
+    </head>
+
+    <body>
+        <h1>Membership Form for Ganji</h1>
+        <form action= "http://localhost:4000/memberInfo" method="post"> 
+            Name: <input type="text" name="name"> Email Address: <input type="email" name="email"><br>
+            Additional Comments: <br>
+            <textarea rows="5" cols="80" name="comments"></textarea>
+            <br>
+            <input type="reset"> <input type="submit" onclick= "message()" value="Submit">
+        </form>
+        <script>
+            function message() {
+                confirm("Please review your information before submitting.\n");
+            }
+        </script>
+    </body>
+</html>
