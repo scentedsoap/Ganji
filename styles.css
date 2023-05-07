@@ -1,8 +1,6 @@
 body {
     margin: 0px;
     padding: 0px;
-    background-color: black;
-    color:white
 }
 
 nav {
@@ -38,6 +36,10 @@ nav ul li {
     right: 0;
     bottom: 0;
     z-index: -1;
+}
+
+.dark-mode {
+    color: white;
 }
 
 @media (min-aspect-ratio: 16/9) {
