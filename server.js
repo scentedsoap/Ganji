@@ -9,6 +9,8 @@ app.use(bodyParser.urlencoded({extended:false}));
 const path = require("path"); 
 const PORT = 4000; 
 
+app.use(express.static("public"))
+
 
 const databaseAndCollection = {db: "final", collection: "members"};
 
@@ -89,6 +91,10 @@ app.get("/", async (request,response) => {
     const { data } = await spotifyGetRequest(request,'https://api.spotify.com/v1/playlists/3JTaIFOl8i6Yxses3HXq1q?market=US');
     console.log(data);
     response.render("form", {tracks: data.tracks.items});
+});
+
+app.get("/", (request,response) => {
+    response.render("index");
 });
 
 app.post("/memberInfo", (request,response) => {
