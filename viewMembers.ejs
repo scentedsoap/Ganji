@@ -1,0 +1,21 @@
+<!Doctype html>
+<html lang = "en">
+
+    <head>
+        <title>Members Request</title>
+    </head>
+
+    <body>
+        <h1>Submit To See All Members Of Ganji</h1>
+        <form action= "http://localhost:4000/members" method="post"> 
+            <input type="submit" onclick= "message()" value="Submit">
+        </form>
+        <script>
+            function message() {
+                if (confirm("Do you want to see the members of the club?\n") == false) {
+                    event.preventDefault(); 
+                }
+            }
+        </script>
+    </body>
+</html>
