@@ -119,6 +119,22 @@ app.post("/memberInfo", (request,response) => {
     })();
 });
 
+app.post("/members", async (request,response) => {
+    await client.connect();
+    let t = "<table border='1'><tr><th>Names</th></tr>"; 
+    const list = client.db(databaseAndCollection.db).collection(databaseAndCollection.collection).find({}); 
+    const arr = await list.toArray(); 
+    arr.forEach(x => {
+        t += "<tr><td>" + x.name + "</td></tr>";
+    });
+    const i = {
+        names : t
+    };
+    response.render("members", i);
+    await client.close(); 
+
+}); 
+
 app.listen(PORT, () => {
     console.log(`Web server started and running at http://localhost:${PORT}`);
 })
