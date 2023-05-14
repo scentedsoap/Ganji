@@ -86,11 +86,30 @@ let spotifyGetRequest = async (req, uri) => {
     return data;
 }
 
-app.get("/", async (request,response) => {
+app.get("/form", async (request,response) => {
     // Get's data about the 'Favorites' playlist
     const { data } = await spotifyGetRequest(request,'https://api.spotify.com/v1/playlists/3JTaIFOl8i6Yxses3HXq1q?market=US');
     console.log(data);
     response.render("form", {tracks: data.tracks.items});
+});
+
+app.get("/about", async (request,response) => {
+    // Get's data about the 'Favorites' playlist
+    const { data } = await spotifyGetRequest(request,'https://api.spotify.com/v1/playlists/3JTaIFOl8i6Yxses3HXq1q?market=US');
+
+    await client.connect();
+    let t = "<table><tr><th>Name</th><th>Email</th></tr>"; 
+    const list = client.db(databaseAndCollection.db).collection(databaseAndCollection.collection).find({}); 
+    const arr = await list.toArray(); 
+    arr.forEach(x => {
+        t += "<tr><td>" + x.name + "</td>" + "<td>" + x.email + "</td></tr>";
+    });
+    t += "</table>"
+
+    await client.close(); 
+
+    console.log(data);
+    response.render("about", {tracks: data?.tracks?.items, names: t});
 });
 
 app.get("/", (request,response) => {
@@ -125,7 +144,7 @@ app.post("/members", async (request,response) => {
     const list = client.db(databaseAndCollection.db).collection(databaseAndCollection.collection).find({}); 
     const arr = await list.toArray(); 
     arr.forEach(x => {
-        t += "<tr><td>" + x.name + "</td></tr>";
+        t += "<tr><td>" + x.name + "</td>" + "<td>" + x.email + "</td></tr>";
     });
     const i = {
         names : t

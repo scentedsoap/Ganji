@@ -1,6 +1,7 @@
-body {
+html, body {
     margin: 0px;
     padding: 0px;
+    font-family: 'Times New Roman', Times, serif !important;
 }
 
 nav {
@@ -12,8 +13,19 @@ nav {
     padding-top: 1rem;
     display:flex; 
     align-items: flex-start;
-
 }
+
+
+nav ul {
+    margin-top: 1em;
+    margin-bottom: 0;
+}
+
+nav a {
+    text-decoration: none !important;
+    color: white !important;
+}
+
 
 nav .logo {
     width: 6rem;
@@ -38,8 +50,41 @@ nav ul li {
     z-index: -1;
 }
 
+.content {
+    margin: 7rem 3rem 3rem 3rem;
+}
+
+.dark-background {
+    background-color: black;
+}
+
 .dark-mode {
     color: white;
+}
+
+.card {
+    background-color: #343231 !important;
+    color: white !important;
+    flex: 0 0 20%;
+    margin-right: 1rem;
+}
+
+.carousel {
+    display: flex;
+    overflow-x: auto;
+}
+
+table, th, td {
+    border: 1px gray solid !important;
+    padding: 1rem;
+}
+
+th {
+    font-size: 1.2rem;
+}
+
+table {
+    width: 100%;
 }
 
 @media (min-aspect-ratio: 16/9) {

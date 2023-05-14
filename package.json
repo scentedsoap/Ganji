@@ -18,6 +18,7 @@
   "homepage": "https://github.com/scentedsoap/Ganji#readme",
   "dependencies": {
     "axios": "^1.4.0",
+    "bootstrap": "^5.3.0-alpha3",
     "dotenv": "^16.0.3",
     "ejs": "^3.1.9",
     "express": "^4.18.2",
