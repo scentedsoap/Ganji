@@ -1,6 +1,6 @@
 1. Name: Daniel Emmela, Directory id: demmela
    Name: Anna Phung, Directory id: aphung1
-   Name: , Directory id: 
+   Name: Bryan Zhang, Directory id: bzhang14
 
 
 2. App Description: Our app will be used by a club called Ganji to get information about people who want to join their club. 
