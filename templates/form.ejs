@@ -33,7 +33,9 @@
             <a href = "/"> Click To Go Back to Home Page </a>
             <script>
                 function message() {
-                    confirm("Please review your information before submitting.\n");
+                    if (confirm("Please review your information before submitting.\n") == false){
+                        event.preventDefault(); 
+                    }
                 }
             </script>
         </div>
